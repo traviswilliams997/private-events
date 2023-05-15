@@ -1,0 +1,13 @@
+<h1>Create an Event!</h1>
+
+<%= form_with model: @event do |f| %>
+  <%= f.label :title, 'Title:' %>
+  <%= f.text_field :title %><br>
+  <%= f.label :date, 'Date:' %>
+  <%= f.datetime_local_field :date %><br>
+  <%= f.label :location, 'Location:' %>
+  <%= f.text_field :location %><br>
+  <%= f.submit 'Create!' %>
+<% end %>
+
+<%= link_to 'Cancel', root_path %>
