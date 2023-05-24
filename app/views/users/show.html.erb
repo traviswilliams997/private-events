@@ -5,7 +5,12 @@
   <h3>Event: <%=  event.title %></h3>
 <% end %>
 
-<h2>Past Events</h2>
+<h2>Upcoming Events</h2>
+<% @user.attended_events.where('date > ?', DateTime.now).each do |event| %>
+  <h3><%= link_to event.title, event %></h3>
+<% end %>
+
+<h2>Previous Events</h2>
 <% @user.attended_events.where('date < ?', DateTime.now).each do |event| %>
   <h3><%= link_to event.title, event %></h3>
 <% end %>
