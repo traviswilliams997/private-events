@@ -4,3 +4,8 @@
 <% current_user.created_events.each do |event| %>
   <h3>Event: <%=  event.title %></h3>
 <% end %>
+
+<h2>Past Events</h2>
+<% @user.attended_events.where('date < ?', DateTime.now).each do |event| %>
+  <h3><%= link_to event.title, event %></h3>
+<% end %>
