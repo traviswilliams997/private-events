@@ -3,3 +3,17 @@
   <h3>Event: <%=  event.title %></h3>
   <h3> Date: <%= event.date%> </h3>
 <% end %>
+<br>
+<h1>Past Events </h1>
+<% @past_events.each do | past_event| %>
+
+ <h3>Event: <%=  past_event.title %></h3>
+  <h3> Date: <%= past_event.date%> </h3>
+<% end %>
+
+<h1>Future Events </h1>
+<%@future_events.each do | future_event| %>
+
+ <h3>Event: <%=  future_event.title %></h3>
+  <h3> Date: <%= future_event.date%> </h3>
+<% end %>
